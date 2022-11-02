@@ -1,1 +1,1 @@
-# iai-momo
+**Code for ITMO ML course**
