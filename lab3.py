@@ -61,7 +61,7 @@ def retry(times):
 
 def Durand_Kerner_method(poly_coeff: np.array, 
                          max_steps=100,
-                         atol=1e-8):
+                         atol=1e-7):
     """
     Находит корни полинома с коэффициентами poly_coeff
       Если не найдет корни за max_steps с точностью atol:
@@ -92,7 +92,7 @@ def Durand_Kerner_method(poly_coeff: np.array,
     
 def Aberth_method(poly_coeff: np.array, 
                   max_steps=100,
-                  atol=1e-8):
+                  atol=1e-7):
     
     """
     Находит корни полинома с коэффициентами poly_coeff
@@ -179,26 +179,4 @@ def get_eigen(matrix: np.array):
 # [a b] [x] = [-c]
 # [d e] [y]   [-f]
 # 
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
 
