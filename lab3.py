@@ -108,10 +108,11 @@ def Aberth_method(poly_coeff: np.array,
     init_radius = 1 + np.abs(poly_coeff).max()
     roots = random_uniform_complex(init_radius, poly_degree)
 
-    for iteration in range(max_steps):
+    for _ in range(max_steps):
         
         num = f(roots) / f.deriv()(roots)
         s = np.array([
+            # sum(1/a)
             np.sum(np.reciprocal(
                 # (xi-xj), i != j
                 roots[i] - np.delete(roots, i)
@@ -120,14 +121,13 @@ def Aberth_method(poly_coeff: np.array,
         ])
 
         den = 1 - num * s
-        
         roots -= num / den
 
         if np.allclose(f(roots), 0, atol=atol):
             return roots
     
     raise RootsNotFoundError()
-    
+
 
 # ======================================================================
 # Функции для поиска собственных чисел и векторов
@@ -179,4 +179,3 @@ def get_eigen(matrix: np.array):
 # [a b] [x] = [-c]
 # [d e] [y]   [-f]
 # 
-
